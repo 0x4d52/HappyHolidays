@@ -1,0 +1,17 @@
+THE SANTA CLAUSE PUBLIC LICENSE
+   Version 1, December 2020
+
+Copyright (C) 2020 Chris Cringle (North Pole, obviously)
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+THE SANTA CLAUSE PUBLIC LICENSE
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+Ho:       You just do whatever you want really.
+Ho Ho:    An attribution in source and binary forms would assist your inclusion
+          on the nice list.
+Ho Ho Ho: Attempting to pass this work off as your own may result in you being
+          placed on the naughty list.

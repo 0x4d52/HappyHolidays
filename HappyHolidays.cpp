@@ -9,10 +9,24 @@ static int r1 = 0;
 static int r2 = 0;
 B b2 = false;
 B b3 = false;
+C _ = std::cout;
+
+static void ___ (int n)
+{
+    if (n > 0)
+        _ << M (n, '\n');
+}
+
+static void __ (M m, int n = 1, int w = 0)
+{
+    _.width (w <= 0 ? 0 : w + m.length());
+    _ << m;
+    _.width (0);
+    ___ (n);
+}
 
 struct O
 {
-    
     O()
     : b1 (true)
     {
@@ -37,13 +51,13 @@ struct O
     {
         if (r1 == 3 && b1 && ! b2)
         {
-            _ << "\n\n";
-            _ << "              {\n";
-            _ << "           O _,o ;\n\n";
-            _ << "            _.o\n";
-            _ << "              >>\n";
-            _ << "              *\n";
-            _ << "              (\n";
+            ___ (2);
+            __ ("{", 1, 14);
+            __ ("O _,o ;", 2, 11);
+            __ ("_.o", 1, 12);
+            __ (">>", 1, 14);
+            __ ("*", 1, 14);
+            __ ("(", 1, 14);
             b2 = true;
             b3 = true;
         }
@@ -52,10 +66,7 @@ struct O
         
         O ooo;
         ooo.t = t + ")\n  ";
-        
-        for (int i = 0; i < (5 - r2); ++i)
-            ooo.t += "  ";
-        
+        ooo.t.append ((5 - r2) * 2, ' ');
         ooo.t += "(" + oo.t;
         
         return ooo;
@@ -81,26 +92,26 @@ struct O
 
         if (b4)
         {
-            _ << "\n\n";
-            _ << "              {\n";
-            _ << "            O o ;\n\n";
-            _ << "              o._\n";
-            _ << "             <<\n";
-            _ << "              *\n";
-            _ << "              (\n";
+            ___ (2);
+            __ ("{", 1, 14);
+            __ ("O o ;", 2, 11);
+            __ ("_.o", 1, 14);
+            __ ("<<", 1, 13);
+            __ ("*", 1, 14);
+            __ ("(", 1, 14);
             b2 = true;
         }
 
-        _ << "            (" << t << ")\n";
+        __ ("(" + t + ")", 1, 12);
         
         if (b4 || b3)
         {
-            _ << "              )\n";
-            _ << "              ;\n";
-            _ << "              }\n";
+            __ (")", 1, 14);
+            __ (";", 1, 14);
+            __ ("}", 1, 14);
         }
         
-        return m;
+        return M (9, ' ') + m + M (2, '\n');
     }
     
     void operator>> (M t) const
@@ -109,9 +120,9 @@ struct O
     }
     
     O& o = *this;
-    M m = "         Happy Holidays\n\n";
-    C _ = std::cout;
+    M m = "Happy Holidays";
     M t = "(o)";
+    C _ = std::cout;
     B b1 = false;
 };
 

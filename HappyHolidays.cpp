@@ -4,11 +4,9 @@
 
 namespace OOO
 {
-
 using C = decltype (std::cout)&;
 using M = std::string;
 using B = bool;
-
 
 static int r1 = 0;
 static int r2 = 0;
@@ -32,23 +30,18 @@ struct O
     {
         if (r1 == 3 && b1 && ! b2)
         {
-            _0 (2);
-            _8_ ({{ "{", 1, 14 }, { "O _,o ;", 2, 11 }, { "_.o", 1, 12 }, { ">>", 1, 14 }, { "*", 1, 14 }, { "(", 1, 14 }});
+            _0 (2); _8_ ({{ "{", 1, 14 }, { "O _,o ;", 2, 11 }, { "_.o", 1, 12 }, { ">>", 1, 14 }, { "*", 1, 14 }, { "(", 1, 14 }});
             b2 = b3 = true;
         }
         
         ++r2;
-        
-        O ooo;
-        ooo.t = t + ")\n  ";
-        ooo.t.append ((5 - r2) * 2, ' ');
-        ooo.t += "(" + oo.t;
-        
+        O ooo; ooo.t = t + ")\n  "; ooo.t.append ((5 - r2) * 2, ' '); ooo.t += "(" + oo.t;
         return ooo;
     }
-    
-    O operator+ (const O& oo) const { O ooo; ooo.t = t + "+" + oo.t; return ooo; }
-    O operator- (const O& oo) const { O ooo; ooo.t = t + "-" + oo.t; return ooo; }
+
+    O d (M op, M tt) const { O ooo; ooo.t = t + op + tt; return ooo; }
+    O operator+ (const O& oo) const { return d ("+", oo.t); }
+    O operator- (const O& oo) const { return d ("-", oo.t); }
     void operator>> (M t) const { _ << t; }
 
     M operator*() const
@@ -57,16 +50,12 @@ struct O
 
         if (b4)
         {
-            _0 (2);
-            _8_ ({{ "{", 1, 14 }, { "O o ;", 2, 11 }, { "_.o", 1, 14 }, { "<<", 1, 13 }, { "*", 1, 14 }, { "(", 1, 14 }});
+            _0 (2); _8_ ({{ "{", 1, 14 }, { "O o ;", 2, 11 }, { "_.o", 1, 14 }, { "<<", 1, 13 }, { "*", 1, 14 }, { "(", 1, 14 }});
             b2 = true;
         }
 
         _8 ("(" + t + ")", 1, 12);
-        
-        if (b4 || b3)
-            _8_ ({{ ")", 1, 14 }, { ";", 1, 14 }, { "}", 1, 14 }});
-        
+        if (b4 || b3) _8_ ({{ ")", 1, 14 }, { ";", 1, 14 }, { "}", 1, 14 }});
         return M (9, ' ') + m + M (2, '\n');
     }
     

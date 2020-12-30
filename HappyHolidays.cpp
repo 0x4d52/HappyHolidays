@@ -20,7 +20,21 @@ using MMM = std::vector<MM>;
 static void _0 (int n) { if (n > 0) _ << M (n, '\n'); }
 static void _8 (M m, int n = 1, int w = 0) { _.width (w <= 0 ? 0 : w + m.length()); _ << m; _.width (0); _0 (n); }
 static void _8_ (MMM mmm) { for (const auto& mm : mmm) _8 (mm.m, mm.n, mm.w); }
-
+static MMM _8_8_ (MM mm, MMM mmm) { mmm.insert (mmm.begin(), mm); return mmm; }
+static MMM _88_ (M m, int n, int w) { return {{ m, n, w }}; }
+template<typename... MN> static MMM _88_ (M m, MN... mn);
+template<typename... MN> static MMM _88_ (M m, int n, MN... mn);
+template<typename... MN> static MMM _88_ (M m, int n, int w, MN... mn);
+template<typename... MN> static MMM _88_ (M m, M mm, MN... mn);
+template<typename... MN> static MMM _88_ (M m, M mm, int n, MN... mn);
+template<typename... MN> static MMM _88_ (M m, M mm, int n, int w, MN... mn);
+template<typename... MN> static MMM _88_ (M m, MN... mn) { return _8_8_ ({ m }, _88_ (mn...)); }
+template<typename... MN> static MMM _88_ (M m, int n, MN... mn) { return _8_8_ ({ m, n }, _88_ (mn...)); }
+template<typename... MN> static MMM _88_ (M m, int n, int w, MN... mn) { return _8_8_ ({ m, n, w }, _88_ (mn...)); }
+template<typename... MN> static MMM _88_ (M m, M mm, MN... mn) { return _8_8_ ({ m }, { mm },  _88_ (mn...)); }
+template<typename... MN> static MMM _88_ (M m, M mm, int n, MN... mn) { return _8_8_ ({ m }, { mm, n }, _88_ (mn...)); }
+template<typename... MN> static MMM _88_ (M m, M mm, int n, int w, MN... mn) { return _8_8_ ({ m }, { mm, n, w }, _88_ (mn...)); }
+    
 struct O
 {
     O() : b1 (true) { ++r1; }
@@ -30,7 +44,7 @@ struct O
     {
         if (r1 == 3 && b1 && ! b2)
         {
-            _0 (2); _8_ ({{ "{", 1, 14 }, { "O _,o ;", 2, 11 }, { "_.o", 1, 12 }, { ">>", 1, 14 }, { "*", 1, 14 }, { "(", 1, 14 }});
+            _8_ (_88_ ("\n\n", "{", 1, 14, "O _,o ;", 2, 11, "_.o", 1, 12, ">>", 1, 14, "*", 1, 14, "(", 1, 14));
             b2 = b3 = true;
         }
         
@@ -50,12 +64,12 @@ struct O
 
         if (b4)
         {
-            _0 (2); _8_ ({{ "{", 1, 14 }, { "O o ;", 2, 12 }, { "o._", 1, 14 }, { "<<", 1, 13 }, { "*", 1, 14 }, { "(", 1, 14 }});
+            _8_ (_88_ ("\n\n", "{", 1, 14, "O o ;", 2, 12, "o._", 1, 14, "<<", 1, 13, "*", 1, 14, "(", 1, 14));
             b2 = true;
         }
 
         _8 ("(" + t + ")", 1, 12);
-        if (b4 || b3) _8_ ({{ ")", 1, 14 }, { ";", 1, 14 }, { "}", 1, 14 }});
+        if (b4 || b3) _8_ (_88_ (")", 1, 14, ";", 1, 14, "}", 1, 14));
         return M (9, ' ') + m + M (2, '\n');
     }
     
